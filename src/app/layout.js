@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Sidebar></Sidebar>
         <div className=" pl-3 sm:ml-64 bg-gray-50 h-screen overflow-hidden">
-            <BarItem>index.js</BarItem>
+            <BarItem></BarItem>
             <div className="absolute p-0 font-light text-slate-400 text-right select-none overflow-hidden">
                {lineNum}
             </div>

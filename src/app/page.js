@@ -1,10 +1,9 @@
 export default function Home() {
    return (
       <>
-         
          <div className="grid grid-cols-2 gap-4 mb-4 h-screen pl-5  items-center">
             <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-grey-800">
-               <span className=" text-base text-gray-400 dark:text-gray-500">
+               <span className=" text-base text-gray-500 dark:text-gray-500">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error fugit ipsum, minus itaque ratione nulla sunt esse laudantium cum veritatis suscipit, eveniet, recusandae dolore doloremque. Maiores alias dolores ratione et!
                </span>
             </div>
