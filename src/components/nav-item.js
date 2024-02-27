@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function NavItem({ children, icon, ...props }) {
   const pathName = usePathname()
-  const childClassName = 'flex items-center p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group'
+  const childClassName = 'flex items-center p-2 text-gray-900 hover:bg-gray-100 group'
   const className =
     pathName === props.href
       ? `${childClassName} bg-gray-100`.trim()

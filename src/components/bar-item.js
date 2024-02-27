@@ -24,7 +24,7 @@ export default function BarItem() {
   }
 
   return (
-    <a href={pathName} className="flex items-center font-light text-slate-400 w-fit dark:text-white hover:text-slate-600 group">
+    <a href={pathName} className="flex items-center font-light text-slate-400 w-fit hover:text-slate-600 group">
       <span>
         <Image src={icon} className='w-4 h-4' alt='icon'></Image>
       </span>

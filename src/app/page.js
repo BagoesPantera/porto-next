@@ -2,13 +2,13 @@ export default function Home() {
    return (
       <>
          <div className="grid grid-cols-2 gap-4 mb-4 h-screen pl-5  items-center">
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-grey-800">
-               <span className=" text-base text-gray-500 dark:text-gray-500">
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28">
+               <span className=" text-base text-gray-500">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error fugit ipsum, minus itaque ratione nulla sunt esse laudantium cum veritatis suscipit, eveniet, recusandae dolore doloremque. Maiores alias dolores ratione et!
                </span>
             </div>
-            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p className="text-2xl text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28">
+               <p className="text-2xl text-gray-400">
                   <svg className="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 1v16M1 9h16" />
                   </svg>
