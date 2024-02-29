@@ -3,6 +3,7 @@
 import NavItem from "./nav-item"
 import jsIcon from '@/../../public/js.svg'
 import pythonIcon from '@/../../public/python.svg'
+import goIcon from '@/../../public/go.svg'
 
 export default function Sidebar() {
 
@@ -36,6 +37,9 @@ export default function Sidebar() {
                     <ul className=" font-medium">
                         <li>
                             <NavItem icon={jsIcon} href='/'>index.js</NavItem>
+                        </li>
+                        <li>
+                            <NavItem icon={goIcon} href='/project'>project.go</NavItem>
                         </li>
                         <li>
                             <NavItem icon={pythonIcon} href='/contact'>contact.py</NavItem>
