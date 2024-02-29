@@ -2,25 +2,25 @@
 
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
-import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import 'prismjs/components/prism-jsx'
+
+import homeCode from "@/code/home-code";
 
 export default function CodePage() {
     const hightlightWithLineNumbers = (input, language) =>
         highlight(input, language)
             .split("\n")
-            .map((line, i) => `<span class='line-numbers'>${i + 1}</span>${line}`)
+            .map((line, i) => `<span class='editorLineNumber'>${i + 1}</span>${line}`)
             .join("\n");
 
-    const code = `console.log('tes')`
+    const code = homeCode
 
     return (
-        <div className="overflow-hidden w-100">
-
+        <div className="w-100">
             <Editor
                 value={code}
-                highlight={code => hightlightWithLineNumbers(code, languages.js)}
+                highlight={code => hightlightWithLineNumbers(code, languages.jsx)}
                 padding={10}
                 className="editor"
                 readOnly={true}
