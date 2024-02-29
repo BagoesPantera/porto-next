@@ -29,7 +29,7 @@ export default function Sidebar() {
                                         </g>
                                     </g>
                                 </svg>
-                                <span className="ms-3">Portofolio</span>
+                                <span className="ms-3">Portfolio</span>
                             </a>
                         </li>
                     </ul>

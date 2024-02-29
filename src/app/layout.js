@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
-import BarItem from "@/components/bar-item";
 import Script from "next/script";
-import 'flowbite'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,25 +12,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const lineNum = []
-   for (let index = 1; index < 27; index++) {
-      lineNum.push(<><span>{index}</span> <br /></>)
+  for (let index = 1; index < 27; index++) {
+    lineNum.push(<><span>{index}</span> <br /></>)
 
-   }
+  }
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Sidebar></Sidebar>
-        <div className=" pl-3 sm:ml-64 bg-gray-50 h-screen overflow-hidden">
-            <BarItem></BarItem>
-            <div className="absolute p-0 font-light text-slate-400 text-right select-none overflow-hidden">
-               {lineNum}
-            </div>
-            <div className="p-4 overflow-hidden h-screen">
-              {children}
-            </div>
-          </div>
+        <Sidebar />
+        {children}
         {/* i found this workaroud here: https://github.com/themesberg/flowbite/issues/51#issuecomment-1035330935*/}
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" strategy="beforeInteractive"/>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" strategy="beforeInteractive" />
       </body>
     </html>
   );
