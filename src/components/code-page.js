@@ -1,11 +1,14 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
 import 'prismjs/themes/prism.css'
 import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-go'
 
 import homeCode from "@/code/home-code";
+import projectCode from '@/code/project-code';
 
 export default function CodePage() {
     const hightlightWithLineNumbers = (input, language) =>
@@ -14,13 +17,32 @@ export default function CodePage() {
             .map((line, i) => `<span class='editorLineNumber'>${i + 1}</span>${line}`)
             .join("\n");
 
-    const code = homeCode
+    const pathName = usePathname()
+
+    let code = ''
+    let language;
+
+    switch (pathName) {
+        case '/':
+            code = homeCode
+            language = languages.jsx
+            break;
+        case '/project':
+            code = projectCode
+            language = languages.go
+            break;
+        case '/contact':
+            code = 'print()'
+
+        default:
+            break;
+    }
 
     return (
         <div className="w-100">
             <Editor
                 value={code}
-                highlight={code => hightlightWithLineNumbers(code, languages.jsx)}
+                highlight={code => hightlightWithLineNumbers(code, language)}
                 padding={10}
                 className="editor"
                 readOnly={true}

@@ -21,16 +21,16 @@ export default function Project() {
             tech: [vueIcon]
         },
         {
-            title:"socloudy",
-            description:"A weather app.",
-            link:"https://github.com/BagoesPantera/socloudy",
-            tech:[flutterIcon]
+            title: "socloudy",
+            description: "A weather app.",
+            link: "https://github.com/BagoesPantera/socloudy",
+            tech: [flutterIcon]
         },
         {
-            title:"Ruma",
-            description:"An anime discord bot.",
-            link:"https://github.com/neophrastic/ruma-discordjs",
-            tech:[djsIcon]
+            title: "Ruma",
+            description: "An anime discord bot.",
+            link: "https://github.com/neophrastic/ruma-discordjs",
+            tech: [djsIcon]
         }
     ]
 
