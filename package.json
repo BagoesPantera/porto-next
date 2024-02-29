@@ -14,7 +14,8 @@
     "prismjs": "^1.29.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-simple-code-editor": "^0.13.1"
+    "react-simple-code-editor": "^0.13.1",
+    "typeit-react": "^2.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

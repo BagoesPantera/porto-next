@@ -11,11 +11,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const lineNum = []
-  for (let index = 1; index < 27; index++) {
-    lineNum.push(<><span>{index}</span> <br /></>)
-
-  }
   return (
     <html lang="en">
       <body className={inter.className}>
