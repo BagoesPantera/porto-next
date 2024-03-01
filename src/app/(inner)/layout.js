@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     }
     return (
         <>
-            <div className="pl-3 sm:ml-64 bg-gray-50 overflow-hidden ">
+            <div className={`pl-3 sm:ml-64 bg-gray-50 ${previewToggle ? 'h-screen overflow-hidden' : ''}  `}>
                 <div className="flex">
                     <BarItem />
                     <label className="inline-flex items-center cursor-pointer ml-auto mt-2">
