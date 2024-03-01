@@ -3,7 +3,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",

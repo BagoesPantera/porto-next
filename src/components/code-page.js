@@ -29,7 +29,7 @@ export default function CodePage() {
             break;
         case '/project':
             code = projectCode
-            language = languages.jsx
+            language = languages.go
             break;
         case '/contact':
             code = 'print()'
@@ -37,7 +37,6 @@ export default function CodePage() {
         default:
             break;
     }
-    console.log(language);
 
     return (
         <div className="w-100">

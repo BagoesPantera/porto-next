@@ -36,8 +36,6 @@ export default function Project() {
 
     return (
         <>
-        <div className="">
-            
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 2xl:grid-cols-4">
                 {
                     list.map((item, i) => (
@@ -63,7 +61,6 @@ export default function Project() {
                     ))
                 }
             </div>
-        </div>
         </>
     )
 }
