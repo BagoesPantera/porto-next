@@ -36,10 +36,12 @@ export default function Project() {
 
     return (
         <>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="">
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 2xl:grid-cols-4">
                 {
-                    list.map((item) => (
-                        <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col">
+                    list.map((item, i) => (
+                        <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow flex flex-col" key={i}>
                             <a href={item.link} target="_blank">
                                 <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900">{item.title}</h5>
                             </a>
@@ -61,6 +63,7 @@ export default function Project() {
                     ))
                 }
             </div>
+        </div>
         </>
     )
 }

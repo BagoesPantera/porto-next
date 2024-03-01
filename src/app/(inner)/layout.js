@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     }
     return (
         <>
-            <div className=" pl-3 sm:ml-64 bg-gray-50 h-screen overflow-hidden">
+            <div className="pl-3 sm:ml-64 bg-gray-50 overflow-hidden ">
                 <div className="flex">
                     <BarItem />
                     <label className="inline-flex items-center cursor-pointer ml-auto mt-2">
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
                         <span className={`ms-2 text-sm font-medium text-gray-900 me-2 ${previewToggle? 'font-bold' : ''}`}>Preview</span>
                     </label>
                 </div>
-                <div className="p-4 overflow-hidden h-screen">
+                <div className="p-4">
                     {previewToggle ? children : <CodePage/>}
                 </div>
             </div>

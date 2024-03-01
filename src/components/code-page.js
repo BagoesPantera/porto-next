@@ -14,7 +14,7 @@ export default function CodePage() {
     const hightlightWithLineNumbers = (input, language) =>
         highlight(input, language)
             .split("\n")
-            .map((line, i) => `<span class='editorLineNumber'>${i + 1}</span>${line}`)
+            .map((line, i) => `<span class='editorLineNumber' key='${i}'>${i + 1}</span>${line}`)
             .join("\n");
 
     const pathName = usePathname()
