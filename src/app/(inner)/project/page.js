@@ -64,11 +64,11 @@ export default function Project() {
                     ))
                 }
             </div>
-            <div class="inline-flex items-center justify-center w-full">
-                <hr class="w-64 h-px my-8 bg-gray-900 border-0 w-full" />
-                <div class="absolute px-4 -translate-x-1/2 bg-gray-50 flex left-1/2">
-                    <Image src={arrowIcon} className="w-5 h-5 rotate-90" />
-                    <Image src={arrowIcon} className="w-5 h-5 -rotate-90" />
+            <div className="inline-flex items-center justify-center w-full">
+                <hr className="w-64 h-px my-8 bg-gray-900 border-0 w-full" />
+                <div className="absolute px-4 -translate-x-1/2 bg-gray-50 flex left-1/2">
+                    <Image src={arrowIcon} className="w-5 h-5 rotate-90"  alt={'icon'}/>
+                    <Image src={arrowIcon} className="w-5 h-5 -rotate-90"  alt={'icon'}/>
                 </div>
             </div>
             {
