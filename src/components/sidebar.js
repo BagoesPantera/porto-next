@@ -4,6 +4,7 @@ import NavItem from "./nav-item"
 import jsIcon from '@/../../public/js.svg'
 import pythonIcon from '@/../../public/python.svg'
 import goIcon from '@/../../public/go.svg'
+import {VscChevronDown, VscChevronRight, VscFolder} from "react-icons/vsc";
 
 export default function Sidebar() {
 
@@ -23,22 +24,38 @@ export default function Sidebar() {
                     <ul className="bg-gray-300">
                         <li>
                             <a href="#" className="flex items-center py-2 pl-2 text-gray-900">
-                                <svg className="w-5 h-5" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                                    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                                        <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -6684.000000)" fill="#000000">
-                                            <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                <path d="M144,6525.39 L142.594,6524 L133.987,6532.261 L133.069,6531.38 L133.074,6531.385 L125.427,6524.045 L124,6525.414 C126.113,6527.443 132.014,6533.107 133.987,6535 C135.453,6533.594 134.024,6534.965 144,6525.39" id="arrow_down-[#339]"></path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                                <span className="ms-3">Portfolio</span>
+                                <VscChevronDown />
+                                <span className="ms-3">Pantera's Portfolio</span>
                             </a>
                         </li>
                     </ul>
                     <ul className=" font-medium bg-gray-200">
                         <li>
                             <NavItem icon={jsIcon} href='/'>index.js</NavItem>
+                        </li>
+                        <li className={'pl-5'}>
+                            <button type="button"
+                                    className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                    aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                                <VscChevronRight className={'w-5 h-5'}/>
+                                <VscFolder />
+                                <span
+                                    className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
+                            </button>
+                            <ul id="dropdown-example" className="hidden py-2 space-y-2">
+                                <li>
+                                    <a href="#"
+                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">index</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">skill</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">hobbies</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <NavItem icon={goIcon} href='/project'>project.go</NavItem>

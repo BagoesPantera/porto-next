@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
+import {Fira_Code, Inter} from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const fira = Fira_Code({subsets: ["latin"]})
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + " bg-gray-50"}>
+      <body className={fira.className + " bg-gray-50"}>
         <Sidebar />
         {children}
         {/* i found this workaroud here: https://github.com/themesberg/flowbite/issues/51#issuecomment-1035330935*/}
