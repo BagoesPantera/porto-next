@@ -14,9 +14,9 @@ export default function Layout({ children }) {
     }
     return (
         <>
-            <div className={`flex flex-col justify-between ${previewToggle ? 'overflow-hidden h-screen' : ''}`}>
+            <div className={`flex flex-col justify-between ${previewToggle ? 'overflow-hidden' : ''}`}>
                 <div className={`pl-3 sm:ml-64 bg-gray-50   `}>
-                    <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-gray-200 rounded-t-lg h-7 -ms-3 bg-gray-100"
+                    <ul className="flex flex-warp text-sm font-medium text-center text-gray-500 border-gray-200 rounded-t-lg h-7 -ms-3 bg-gray-100"
                         id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
                         <li className="border-x-2 border-t-4 border-t-sky-500 flex items-center h-7 bg-gray-50">
                             <Image src={jsIcon} className='w-5 h-5 ms-1' alt='icon'></Image>
@@ -38,10 +38,10 @@ export default function Layout({ children }) {
                         </li>
                     </ul>
                     <div className="flex">
-                        <BarItem/>
+                        <BarItem />
                         <label className="inline-flex items-center cursor-pointer ml-auto mt-2">
                             <input type="checkbox" value="" className="sr-only peer" checked={previewToggle}
-                                   onChange={handlePreviewToggle}/>
+                                onChange={handlePreviewToggle} />
                             <span
                                 className={`ms-3 text-sm font-medium text-gray-900 me-2 ${previewToggle ? '' : 'font-bold'}`}>Code</span>
                             <div
@@ -51,15 +51,15 @@ export default function Layout({ children }) {
                         </label>
                     </div>
                     <div className="pr-3">
-                        {previewToggle ? children : <CodePage/>}
+                        {previewToggle ? children : <CodePage />}
                     </div>
                 </div>
                 {previewToggle &&
-                    <footer className="bg-white shadow dark:bg-gray-800 z-50 h-10">
+                    <footer className="bg-white shadow z-50 h-10 fixed bottom-0 w-full">
                         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#"
-                                                                                          className="hover:underline">Pantera</a>. All Rights Reserved.
-    </span>
+                            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#"
+                                className="hover:underline">Pantera</a>. All Rights Reserved.
+                            </span>
                             <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                                 <li>
                                     <a href="#" className="hover:underline me-4 md:me-6">About</a>
