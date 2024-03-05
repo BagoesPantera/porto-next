@@ -4,9 +4,11 @@ import NavItem from "./nav-item"
 import jsIcon from '@/../../public/js.svg'
 import pythonIcon from '@/../../public/python.svg'
 import goIcon from '@/../../public/go.svg'
-import {VscChevronDown, VscChevronRight, VscFolder} from "react-icons/vsc";
+import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
+import { useState } from "react"
 
 export default function Sidebar() {
+    const [toggleAbout, setToogleAbout] = useState(true) // false = closed
 
     return (
         <>
@@ -35,25 +37,37 @@ export default function Sidebar() {
                         </li>
                         <li className={'pl-5'}>
                             <button type="button"
-                                    className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                    aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-                                <VscChevronRight className={'w-5 h-5'}/>
-                                <VscFolder />
+                                className={`flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100`} onClick={() => { setToogleAbout(!toggleAbout) }}
+                            >
+
+                                {toggleAbout ?
+                                    (
+                                        <>
+                                            <VscChevronDown className={'w-5 h-5'} />
+                                            <VscFolderOpened />
+                                        </>
+                                    )
+                                    : (
+                                        <>
+                                            <VscChevronRight className={'w-5 h-5'} />
+                                            <VscFolder />
+                                        </>
+                                    )
+                                }
+
+
                                 <span
                                     className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
                             </button>
-                            <ul id="dropdown-example" className="hidden py-2 space-y-2">
+                            <ul className={`${!toggleAbout ? 'hidden' : ''} py-2 space-y-2`}>
                                 <li>
-                                    <a href="#"
-                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">index</a>
+                                    <NavItem icon={jsIcon} href='/about'>index.js</NavItem>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">skill</a>
+                                    <NavItem icon={jsIcon} href='/about/skill'>skills.js</NavItem>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">hobbies</a>
+                                    <NavItem icon={jsIcon} href='/about/hobbies'>hobbies.js</NavItem>
                                 </li>
                             </ul>
                         </li>
