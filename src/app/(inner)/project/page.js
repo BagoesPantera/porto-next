@@ -58,37 +58,36 @@ export default function Project() {
 
     return (
         <>
-        <div className="flex items-center">
-            <MdPushPin />
-            <p className="text-gray-800 ms-2">Pinned Projects</p>
-        </div>
-            <div className="grid grid-cols-2 mt-2 md:grid-cols-3 gap-2 2xl:grid-cols-4 w-full h-full">
-                {
-                    list.map((item, i) => (
-                        <ProjectCard item={item} index={i} />
-                    ))
-                }
-            </div>
-            {/* <div className="inline-flex items-center justify-center w-full">
-                <hr className="w-64 h-px my-8 bg-gray-900 border-0 w-full" />
-                <div className="absolute px-4 -translate-x-1/2 bg-gray-50 flex left-1/2">
-                    <Image src={arrowIcon} className="w-5 h-5 rotate-90"  alt={'icon'}/>
-                    <Image src={arrowIcon} className="w-5 h-5 -rotate-90"  alt={'icon'}/>
+            <div className={'flex flex-col lg:h-[100%]  justify-center'}>
+                <div className="pl-4">
+                    <h1 className={'text-4xl text-gray-800'}>Projects</h1>
+                    <div className="pl-4 border-s-4 border-gray-300 lg:h-[60vh] flex flex-col items-center w-[75%] ">
+                        <div className="border-s-4 h-fit mt-10 text-gray-600 py-5">
+                            <div className="flex items-center pl-2">
+                                <Image src={reactIcon} className="w-10 h-10"></Image>
+                                <span className='ms-3 text-gray-700'>Mardi</span>
+                            </div>
+                            <div className="ms-7 mt-4">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, quis eaque sint quod eius sequi voluptates vero excepturi repudiandae, quae modi ab numquam animi a amet placeat ipsa non mollitia.</p>
+                                <a href="" className="underline text-sky-500">Visit</a>
+                                {/* <p className="text-gray-50">2sadasd</p> */}
+                            </div>
+                        </div>
+                        <div className="border-s-4 h-fit mt-2 lg:mt-10 text-gray-600 py-5">
+                            <div className="flex items-center pl-2">
+                                <Image src={vueIcon} className="w-10 h-10"></Image>
+                                <span className='ms-3 text-gray-700'>IP Tracker</span>
+                            </div>
+                            <div className="ms-7 mt-4">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, quis eaque sint quod eius sequi voluptates vero excepturi repudiandae, quae modi ab numquam animi a amet placeat ipsa non mollitia.</p>
+                                <a href="" className="underline text-sky-500">Visit</a>
+                            </div>
+                        </div>
+                        <p className="text-gray-50">2sadasd</p>
+                    </div>
                 </div>
-            </div> */}
-            <div className="flex items-center mt-4">
-
-                <FaBookBookmark />
-                <p className="text-gray-800 ms-2">Repository</p>
+                <p className="text-gray-50">2sadasd</p>
             </div>
-            {
-                repoList.map((item, i) => (
-                    <>
-                    <ProjectCard item={item} index={i}></ProjectCard>
-                    <p className="mt-2"></p>
-                    </>
-                ))
-            }
         </>
     )
 }
