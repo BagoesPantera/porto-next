@@ -12,7 +12,7 @@ export default function Hobbies(){
                         <span className='ms-3 text-gray-700 font-bold'>Code</span>
                     </div>
                     <div className="ms-7 mt-4">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, quis eaque sint quod eius sequi voluptates vero excepturi repudiandae, quae modi ab numquam animi a amet placeat ipsa non mollitia.</p>
+                        <p>My passion for coding lies in the constant opportunity to explore new challenges and expand my skillset. In my free time, I actively engage in online coding platforms like HackerRank, Codewars, and LeetCode to tackle diverse problems and hone my programming abilities.</p>
                     </div>
                 </div>
                 <div className="border-s-4 h-fit mt-2 lg:mt-10 text-gray-600 py-5">
@@ -21,7 +21,7 @@ export default function Hobbies(){
                         <span className='ms-3 text-gray-700 font-bold'>Games</span>
                     </div>
                     <div className="ms-7 mt-4">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, quis eaque sint quod eius sequi voluptates vero excepturi repudiandae, quae modi ab numquam animi a amet placeat ipsa non mollitia.</p>
+                        <p>In addition to coding, I enjoy gaming, particularly titles from Riot Games, like League of Legends, Valorant, and Legends of Runeterra. However, I haven't gotten into mobile games yet.</p>
                     </div>
                 </div>
             </div>
