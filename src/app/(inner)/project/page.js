@@ -7,7 +7,7 @@ import vueIcon from '@/../../public/vue.svg'
 export default function Project() {
     return (
         <> 
-            <div className={'flex flex-col justify-center'}>
+            <div className={'flex flex-col'}>
                 <div className="pl-4">
                     <h1 className={'text-4xl text-gray-800'}>Projects</h1>
                     <div className="pl-4 border-s-4 border-gray-300 h-fit py-5 flex flex-col items-center w-[75%] ">
