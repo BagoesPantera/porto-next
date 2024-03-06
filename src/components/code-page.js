@@ -16,6 +16,7 @@ import projectCode from '@/code/project-code';
 import aboutCode from '@/code/about-code';
 import skillCode from '@/code/skill-code';
 import hobbiesCode from '@/code/hobbies-code';
+import contactCode from '@/code/contact-code';
 
 export default function CodePage() {
     const hightlightWithLineNumbers = (input, language) =>
@@ -39,7 +40,7 @@ export default function CodePage() {
             language = languages.go
             break;
         case '/contact':
-            code = 'print()'
+            code = contactCode
             language = languages.python
             break;
         case '/about':
