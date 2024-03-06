@@ -6,9 +6,16 @@ import { highlight, languages } from "prismjs";
 import 'prismjs/themes/prism.css'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-go'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-ruby'
+import 'prismjs/components/prism-kotlin'
+import 'prismjs/components/prism-java'
 
 import homeCode from "@/code/home-code";
 import projectCode from '@/code/project-code';
+import aboutCode from '@/code/about-code';
+import skillCode from '@/code/skill-code';
+import hobbiesCode from '@/code/hobbies-code';
 
 export default function CodePage() {
     const hightlightWithLineNumbers = (input, language) =>
@@ -33,6 +40,19 @@ export default function CodePage() {
             break;
         case '/contact':
             code = 'print()'
+            language = languages.python
+            break;
+        case '/about':
+            code = aboutCode
+            language = languages.ruby
+            break;
+        case '/about/skill':
+            code = skillCode
+            language = languages.kotlin
+            break;
+        case '/about/hobbies':
+            code = hobbiesCode
+            language = languages.java
 
         default:
             break;

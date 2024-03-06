@@ -1,11 +1,8 @@
 'use client'
 import BarItem from "@/components/bar-item";
 import CodePage from "@/components/code-page";
+import TopNav from "@/components/top-nav";
 import { useState } from "react";
-import Image from "next/image";
-import jsIcon from "@/../../public/js.svg";
-import goIcon from "@/../../public/go.svg";
-import pythonIcon from "@/../../public/python.svg";
 import { usePathname } from 'next/navigation'
 import { VscRemote, VscSourceControl, VscSync, VscError, VscWarning } from "react-icons/vsc";
 import { FaGithub, FaHackerrank } from "react-icons/fa";
@@ -22,27 +19,7 @@ export default function Layout({ children }) {
         <>
             <div className={`flex flex-col justify-between ${previewToggle ? 'overflow-hidden' : ''}`}>
                 <div className={`pl-3 sm:ml-64 bg-gray-50   `}>
-                    <ul className="flex flex-warp text-sm font-medium text-center text-gray-500 border-gray-200 rounded-t-lg h-7 -ms-3 bg-gray-100"
-                        id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-                        <li className="border-x-2 border-t-4 border-t-sky-500 flex items-center h-7 bg-gray-50">
-                            <Image src={jsIcon} className='w-5 h-5 ms-1' alt='icon'></Image>
-                            <a href="" className="inline-block p-4 font-bold">
-                                index.js
-                            </a>
-                        </li>
-                        <li className="border-x-2 flex items-center h-7">
-                            <Image src={goIcon} className='w-5 h-5 ms-1' alt='icon'></Image>
-                            <a href="" className="inline-block p-4">
-                                project.go
-                            </a>
-                        </li>
-                        <li className="border-x-2 flex items-center h-7">
-                            <Image src={pythonIcon} className='w-5 h-5 ms-1' alt='icon'></Image>
-                            <a href="" className="inline-block p-4">
-                                contact.py
-                            </a>
-                        </li>
-                    </ul>
+                    <TopNav />
                     <div className="flex">
                         <BarItem />
                         <label className="inline-flex items-center cursor-pointer ml-auto mt-2">

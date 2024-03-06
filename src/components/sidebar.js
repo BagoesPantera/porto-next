@@ -4,6 +4,9 @@ import NavItem from "./nav-item"
 import jsIcon from '@/../../public/js.svg'
 import pythonIcon from '@/../../public/python.svg'
 import goIcon from '@/../../public/go.svg'
+import rubbyIcon from '@/../../public/ruby.svg'
+import kotlinIcon from '@/../../public/kotlin.svg'
+import javaIcon from '@/../../public/java.svg'
 import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
 import { useState } from "react"
 
@@ -54,20 +57,17 @@ export default function Sidebar() {
                                         </>
                                     )
                                 }
-
-
-                                <span
-                                    className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
+                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
                             </button>
                             <ul className={`${!toggleAbout ? 'hidden' : ''} py-2 space-y-2`}>
                                 <li>
-                                    <NavItem icon={jsIcon} href='/about'>index.js</NavItem>
+                                    <NavItem icon={rubbyIcon} href='/about'>index.rb</NavItem>
                                 </li>
                                 <li>
-                                    <NavItem icon={jsIcon} href='/about/skill'>skills.js</NavItem>
+                                    <NavItem icon={kotlinIcon} href='/about/skill'>skills.kt</NavItem>
                                 </li>
                                 <li>
-                                    <NavItem icon={jsIcon} href='/about/hobbies'>hobbies.js</NavItem>
+                                    <NavItem icon={javaIcon} href='/about/hobbies'>hobbies.java</NavItem>
                                 </li>
                             </ul>
                         </li>

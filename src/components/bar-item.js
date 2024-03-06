@@ -5,6 +5,9 @@ import Image from 'next/image'
 import jsIcon from '@/../../public/js.svg'
 import pythonIcon from '@/../../public/python.svg'
 import goIcon from '@/../../public/go.svg'
+import rubbyIcon from '@/../../public/ruby.svg'
+import kotlinIcon from '@/../../public/kotlin.svg'
+import javaIcon from '@/../../public/java.svg'
 
 export default function BarItem() {
   const pathName = usePathname()
@@ -23,6 +26,18 @@ export default function BarItem() {
     case '/contact':
       icon = pythonIcon
       text = 'contact.py'
+      break;
+    case '/about':
+      icon = rubbyIcon
+      text = 'index.rb'
+      break;
+    case '/about/skill':
+      icon = kotlinIcon
+      text = 'skill.kt'
+      break;
+    case '/about/hobbies':
+      icon = javaIcon
+      text = 'hobbies.java'
 
     default:
       break;
