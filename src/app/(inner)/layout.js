@@ -38,7 +38,7 @@ export default function Layout({ children }) {
                     </div>
                 </div>
                 {previewToggle &&
-                    <footer className={`bg-white shadow z-50 h-10 ${pathName !== '/contact' ? 'fixed bottom-0 w-full' : ''} flex`}>
+                    <footer className={`bg-white shadow z-50 h-10 ${true ? 'fixed bottom-0 w-full' : ''} flex`}>
                         <div className="w-full flex justify-between">
                             <div className="flex text-sm text-gray-500">
                                 <div className="bg-gray-700 p-0 m-0 h-full items-center flex w-10 justify-center">
