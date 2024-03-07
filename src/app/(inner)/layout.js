@@ -15,6 +15,7 @@ export default function Layout({ children }) {
         setPreviewToggle(!previewToggle)
     }
     const pathName = usePathname()
+    const paths = ['/about/skill', '/about/hobbies']
     return (
         <>
             <div className={`flex flex-col justify-between ${previewToggle ? 'overflow-hidden' : ''}`}>
@@ -38,7 +39,7 @@ export default function Layout({ children }) {
                     </div>
                 </div>
                 {previewToggle &&
-                    <footer className={`bg-white shadow z-50 h-10 ${true ? 'fixed bottom-0 w-full' : ''} flex`}>
+                    <footer className={`bg-white shadow z-50 h-10 ${!paths.includes(pathName) ? 'fixed bottom-0 w-full' : 'mt-3'} flex md:fixed md:bottom-0 md:w-full`}>
                         <div className="w-full flex justify-between">
                             <div className="flex text-sm text-gray-500">
                                 <div className="bg-gray-700 p-0 m-0 h-full items-center flex w-10 justify-center">
