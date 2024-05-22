@@ -1,6 +1,7 @@
 'use client'
 import TypeIt from "typeit-react";
 import Image from "next/image";
+import photo from "@/../public/photo.png"
 
 export default function Home() {
    return (
@@ -33,7 +34,7 @@ export default function Home() {
 
             </div>
             <div className="flex items-center justify-center rounded bg-gray-50 h-[40vh] w-[50%]">
-               <img src="https://cdn.discordapp.com/attachments/940834033825349653/1214179928866693140/output-onlinepngtools.png?ex=65f82c2d&is=65e5b72d&hm=f08782ef90e1558f88cc61796b6c6129bc7bf564a4e150d97890b4962f0906d2&" alt="" />
+               {/*<Image src={photo} />*/}
             </div>
          </div>
       </>
