@@ -70,9 +70,9 @@ export default function Layout({ children }) {
                                     </a>
                                 </li>
                                 <li className="flex items-center">
-                                    <a href="https://www.instagram.com/bagoespantera/" target="_blank" className="flex hover:underline">
+                                    <a href="https://www.instagram.com/panteraqt/" target="_blank" className="flex hover:underline">
                                         <IoLogoInstagram className="w-5 h-5 me-4 md:me-1" />
-                                        <span className="hidden md:me-4 md:block">bagoespantera</span>
+                                        <span className="hidden md:me-4 md:block">panteraqt</span>
                                     </a>
                                 </li>
                                 <li className="flex items-center">
