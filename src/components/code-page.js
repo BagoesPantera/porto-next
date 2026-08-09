@@ -2,28 +2,38 @@
 
 import { usePathname } from 'next/navigation'
 import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs";
+import Prism from "prismjs";
 import 'prismjs/themes/prism.css'
+import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-go'
+import 'prismjs/components/prism-markup-templating'
+import 'prismjs/components/prism-php'
 import 'prismjs/components/prism-python'
 import 'prismjs/components/prism-ruby'
 import 'prismjs/components/prism-kotlin'
 import 'prismjs/components/prism-java'
 
 import homeCode from "@/code/home-code";
-import projectCode from '@/code/project-code';
+import personalCode from '@/code/personal-code';
+import professionalCode from '@/code/professional-code';
 import aboutCode from '@/code/about-code';
 import skillCode from '@/code/skill-code';
 import hobbiesCode from '@/code/hobbies-code';
 import contactCode from '@/code/contact-code';
 
 export default function CodePage() {
-    const hightlightWithLineNumbers = (input, language) =>
-        highlight(input, language)
+    const hightlightWithLineNumbers = (input, language) => {
+        let highlighted;
+        try {
+            highlighted = Prism.highlight(input, language);
+        } catch {
+            highlighted = input;
+        }
+        return highlighted
             .split("\n")
             .map((line, i) => `<span class='editorLineNumber' key='${i}'>${i + 1}</span>${line}`)
             .join("\n");
+    }
 
     const pathName = usePathname()
 
@@ -33,27 +43,32 @@ export default function CodePage() {
     switch (pathName) {
         case '/':
             code = homeCode
-            language = languages.jsx
+            language = Prism.languages.javascript
             break;
-        case '/project':
-            code = projectCode
-            language = languages.go
+        case '/project/personal':
+            code = personalCode
+            language = Prism.languages.jsx
+            break;
+        case '/project/professional':
+            code = professionalCode
+            language = Prism.languages.php
             break;
         case '/contact':
             code = contactCode
-            language = languages.python
+            language = Prism.languages.python
             break;
         case '/about':
             code = aboutCode
-            language = languages.ruby
+            language = Prism.languages.ruby
             break;
         case '/about/skill':
             code = skillCode
-            language = languages.kotlin
+            language = Prism.languages.kotlin
             break;
         case '/about/hobbies':
             code = hobbiesCode
-            language = languages.java
+            language = Prism.languages.java
+            break;
 
         default:
             break;
@@ -66,11 +81,16 @@ export default function CodePage() {
                 highlight={code => hightlightWithLineNumbers(code, language)}
                 padding={10}
                 className="editor"
+                preClassName="code-editor-pre"
+                textareaClassName="code-editor-textarea"
+                textareaId="codeArea"
                 readOnly={true}
                 style={{
                     fontFamily: '"Fira code", "Fira Mono", monospace',
                     fontSize: 14,
-                    outline: 0
+                    outline: 0,
+                    overflowX: 'auto',
+                    overflowY: 'hidden'
                 }}
             />
         </div>

@@ -1,16 +1,14 @@
-const homeCode = `export default function Home() {
-   return (
-      <>
-         <div className="left">
-            <h1>Hai</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur laudantium maiores eaque alias architecto animi culpa! Maiores officia numquam harum iste blanditiis libero ducimus accusamus dolorem repellat itaque? Delectus?</p>
-            <button>Contact me!</button>
-         </div>
-         <div className="right">
-            <img src="/profile.jpg" alt="profil ava" />
-         </div>
-      </>
-   );
-}`
+const homeCode = `const developer = {
+  name: "Bagoes Pantera",
+  role: "Full-Stack Laravel Developer",
+  stack: ["Laravel", "PHP", "Full-Stack Web Development"],
+  focus: "Build reliable, maintainable web systems",
+  approach: "Build. Learn. Improve.",
+};
 
-export default homeCode
+const status = developer.role + " | " + developer.focus;
+
+console.log("Hello, I am " + developer.name);
+console.log(status);
+`
+export default homeCode;

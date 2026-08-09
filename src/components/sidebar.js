@@ -1,17 +1,20 @@
 'use client'
 
 import NavItem from "./nav-item"
-import jsIcon from '@/../../public/js.svg'
-import pythonIcon from '@/../../public/python.svg'
-import goIcon from '@/../../public/go.svg'
-import rubbyIcon from '@/../../public/ruby.svg'
-import kotlinIcon from '@/../../public/kotlin.svg'
-import javaIcon from '@/../../public/java.svg'
+import jsIcon from '@public/js.svg'
+import pythonIcon from '@public/python.svg'
+import rubbyIcon from '@public/ruby.svg'
+import kotlinIcon from '@public/kotlin.svg'
+import javaIcon from '@public/java.svg'
+import reactIcon from '@public/react.svg'
+import phpIcon from '@public/php.svg'
+
 import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
 import { useState } from "react"
 
 export default function Sidebar() {
     const [toggleAbout, setToogleAbout] = useState(true) // false = closed
+    const [toggleProject, setToogleProject] = useState(true) // false = closed
 
     return (
         <>
@@ -30,7 +33,7 @@ export default function Sidebar() {
                         <li>
                             <a href="#" className="flex items-center py-2 pl-2 text-gray-900">
                                 <VscChevronDown />
-                                <span className="ms-3">Pantera's Portfolio</span>
+                                <span className="ms-3">Pantera&apos;s Portfolio</span>
                             </a>
                         </li>
                     </ul>
@@ -71,8 +74,35 @@ export default function Sidebar() {
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <NavItem icon={goIcon} href='/project'>project.go</NavItem>
+                        <li className={'pl-5'}>
+                            <button type="button"
+                                className={`flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100`} onClick={() => { setToogleProject(!toggleProject) }}
+                            >
+
+                                {toggleProject ?
+                                    (
+                                        <>
+                                            <VscChevronDown className={'w-5 h-5'} />
+                                            <VscFolderOpened />
+                                        </>
+                                    )
+                                    : (
+                                        <>
+                                            <VscChevronRight className={'w-5 h-5'} />
+                                            <VscFolder />
+                                        </>
+                                    )
+                                }
+                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Project</span>
+                            </button>
+                            <ul className={`${!toggleProject ? 'hidden' : ''} py-2 space-y-2`}>
+                                <li>
+                                    <NavItem icon={reactIcon} href='/project/personal'>personal.jsx</NavItem>
+                                </li>
+                                <li>
+                                    <NavItem icon={phpIcon} href='/project/professional'>professional.php</NavItem>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <NavItem icon={pythonIcon} href='/contact'>contact.py</NavItem>

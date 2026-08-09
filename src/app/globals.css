@@ -28,13 +28,23 @@ https://codesandbox.io/s/react-simple-editor-linenumbers-wy240?from-embed=&file=
 .editor {
   counter-reset: line;
 }
-.editor #codeArea {
-  outline: none;
+
+/* Highlighted <pre> (preClassName): keep one logical line per visual line.
+   !important overrides the library's inline white-space: pre-wrap. */
+.code-editor-pre {
   padding-left: 60px !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
 
-.editor pre {
+/* Transparent <textarea> overlay (textareaClassName): must share the same
+   left gutter and wrapping behavior so the caret aligns with the code. */
+.code-editor-textarea {
   padding-left: 60px !important;
+  white-space: pre !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
 .editor .editorLineNumber {
   position: absolute;

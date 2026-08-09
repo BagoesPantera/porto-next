@@ -1,11 +1,21 @@
-const aboutCode = `def index
-render html: '<>
-<h1>About</h1>
-<div>
-    <p>Hi, I'm Pantera, a backend developer from Bali, Indonesia. While currently an informatics student at Primakara University, my passion for coding stems from the constant challenge of learning new things. While I primarily work with JavaScript and PHP, I'm always open to exploring new programming languages for potential collaborations.</p>
-    <a href="">Download my CV</a>
-</div>
-</>'.html_safe
-end`
+const aboutCode = `class AboutController < ApplicationController
+  SUMMARY = {
+    name: "Bagoes Pantera",
+    role: "Full-Stack Laravel Developer",
+    background: "developing and maintaining web-based information systems",
+    experience: [
+      "backend services",
+      "database design",
+      "business workflows",
+      "user-facing interfaces"
+    ],
+    milestones: "Top 100 - Google Solution Challenge 2024",
+    certifications: %w[Software (BNSP), Network & System Security (FCNS)]
+  }.freeze
 
-export default aboutCode
+  def index
+    render json: SUMMARY
+  end
+end
+`
+export default aboutCode;
