@@ -1,8 +1,8 @@
 'use client'
 import Image from "next/image"
 
-import reactIcon from '@/../../public/react.svg'
-import vueIcon from '@/../../public/vue.svg'
+import reactIcon from '@public/react.svg'
+import vueIcon from '@public/vue.svg'
 
 export default function Project() {
     return (
@@ -13,7 +13,7 @@ export default function Project() {
                     <div className="pl-4 border-s-4 border-gray-300 h-fit py-5 flex flex-col items-center w-[75%] ">
                         <div className="border-s-4 h-fit text-gray-600 py-5">
                             <div className="flex items-center pl-2">
-                                <Image src={reactIcon} className="w-10 h-10"></Image>
+                                <Image src={reactIcon} className="w-10 h-10" alt="React logo"></Image>
                                 <span className='ms-3 text-gray-700'>Mardi</span>
                             </div>
                             <div className="ms-7 mt-4">
@@ -23,7 +23,7 @@ export default function Project() {
                         </div>
                         <div className="border-s-4 h-fit mt-2 lg:mt-10 text-gray-600 py-5">
                             <div className="flex items-center pl-2">
-                                <Image src={vueIcon} className="w-10 h-10"></Image>
+                                <Image src={vueIcon} className="w-10 h-10" alt="Vue logo"></Image>
                                 <span className='ms-3 text-gray-700'>IP Tracker</span>
                             </div>
                             <div className="ms-7 mt-4">

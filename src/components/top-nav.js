@@ -2,9 +2,9 @@
 
 import TopNavItem from "./top-nav-item";
 
-import jsIcon from "@/../../public/js.svg";
-import goIcon from "@/../../public/go.svg";
-import pythonIcon from "@/../../public/python.svg";
+import jsIcon from "@public/js.svg";
+import goIcon from "@public/go.svg";
+import pythonIcon from "@public/python.svg";
 
 export default function TopNav() {
     return (

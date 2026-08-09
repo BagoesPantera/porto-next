@@ -1,7 +1,7 @@
 'use client'
 import TypeIt from "typeit-react";
 import Image from "next/image";
-import photo from "@/../public/photo.png"
+import photo from "@public/photo.png"
 
 export default function Home() {
    return (

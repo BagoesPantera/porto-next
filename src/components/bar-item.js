@@ -2,12 +2,12 @@
 
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import jsIcon from '@/../../public/js.svg'
-import pythonIcon from '@/../../public/python.svg'
-import goIcon from '@/../../public/go.svg'
-import rubbyIcon from '@/../../public/ruby.svg'
-import kotlinIcon from '@/../../public/kotlin.svg'
-import javaIcon from '@/../../public/java.svg'
+import jsIcon from '@public/js.svg'
+import pythonIcon from '@public/python.svg'
+import goIcon from '@public/go.svg'
+import rubbyIcon from '@public/ruby.svg'
+import kotlinIcon from '@public/kotlin.svg'
+import javaIcon from '@public/java.svg'
 
 export default function BarItem() {
   const pathName = usePathname()

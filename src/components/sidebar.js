@@ -1,12 +1,12 @@
 'use client'
 
 import NavItem from "./nav-item"
-import jsIcon from '@/../../public/js.svg'
-import pythonIcon from '@/../../public/python.svg'
-import goIcon from '@/../../public/go.svg'
-import rubbyIcon from '@/../../public/ruby.svg'
-import kotlinIcon from '@/../../public/kotlin.svg'
-import javaIcon from '@/../../public/java.svg'
+import jsIcon from '@public/js.svg'
+import pythonIcon from '@public/python.svg'
+import goIcon from '@public/go.svg'
+import rubbyIcon from '@public/ruby.svg'
+import kotlinIcon from '@public/kotlin.svg'
+import javaIcon from '@public/java.svg'
 import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
 import { useState } from "react"
 
@@ -30,7 +30,7 @@ export default function Sidebar() {
                         <li>
                             <a href="#" className="flex items-center py-2 pl-2 text-gray-900">
                                 <VscChevronDown />
-                                <span className="ms-3">Pantera's Portfolio</span>
+                                <span className="ms-3">Pantera&apos;s Portfolio</span>
                             </a>
                         </li>
                     </ul>

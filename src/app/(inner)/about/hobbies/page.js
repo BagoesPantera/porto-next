@@ -21,7 +21,7 @@ export default function Hobbies(){
                         <span className='ms-3 text-gray-700 font-bold'>Games</span>
                     </div>
                     <div className="ms-7 mt-4">
-                        <p>In addition to coding, I enjoy gaming, particularly titles from Riot Games, like League of Legends, Valorant, and Legends of Runeterra. However, I haven't gotten into mobile games yet.</p>
+                        <p>In addition to coding, I enjoy gaming, particularly titles from Riot Games, like League of Legends, Valorant, and Legends of Runeterra. However, I haven&apos;t gotten into mobile games yet.</p>
                     </div>
                 </div>
             </div>
