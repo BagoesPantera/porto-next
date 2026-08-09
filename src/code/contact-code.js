@@ -1,33 +1,18 @@
-const contactCode = `from flask import Flask, render_template, request
-
-import requests
-import os
-
-app = Flask(__name__)
-
-TELEGRAM_API = os.getenv("TELEGRAM_API")  # e.g. https://api.telegram.org/bot<YOUR_BOT_TOKEN>
-CHAT_ID = os.getenv("CHAT_ID", "YOUR_CHAT_ID")
+const contactCode = `import os
 
 
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        email = request.form["email"]
-        content = request.form["message"]
-        requests.get(
-            f"{TELEGRAM_API}/sendMessage",
-            params={"chat_id": CHAT_ID, "text": f"<{email}>{content}"},
-        )
-    return render_template(
-        "contact.html",
-        form={"""
-        <form action="" method="post">
-            <label>Email address</label>
-            <input type="email" name="email" placeholder="your.name@company.com" />
-            <label>Your message</label>
-            <textarea name="content" rows="4"></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        """},
-    )`
+def contact() -> dict:
+    return {
+        "email": os.getenv("EMAIL", "bagoespantera1@gmail.com"),
+        "github": "https://github.com/BagoesPantera",
+        "instagram": "https://www.instagram.com/panteraqt/",
+        "hackerrank": "https://www.hackerrank.com/bagoespantera",
+        "leetcode": "https://leetcode.com/panteraa/",
+        "codewars": "https://www.codewars.com/users/panteraa",
+    }
+
+
+links = contact()
+print("Send a message — let's build something great together.")
+`
 export default contactCode;

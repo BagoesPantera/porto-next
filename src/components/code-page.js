@@ -4,15 +4,18 @@ import { usePathname } from 'next/navigation'
 import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
 import 'prismjs/themes/prism.css'
+import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-go'
+import 'prismjs/components/prism-markup-templating'
+import 'prismjs/components/prism-php'
 import 'prismjs/components/prism-python'
 import 'prismjs/components/prism-ruby'
 import 'prismjs/components/prism-kotlin'
 import 'prismjs/components/prism-java'
 
 import homeCode from "@/code/home-code";
-import projectCode from '@/code/project-code';
+import personalCode from '@/code/personal-code';
+import professionalCode from '@/code/professional-code';
 import aboutCode from '@/code/about-code';
 import skillCode from '@/code/skill-code';
 import hobbiesCode from '@/code/hobbies-code';
@@ -40,11 +43,15 @@ export default function CodePage() {
     switch (pathName) {
         case '/':
             code = homeCode
+            language = Prism.languages.javascript
+            break;
+        case '/project/personal':
+            code = personalCode
             language = Prism.languages.jsx
             break;
-        case '/project':
-            code = projectCode
-            language = Prism.languages.go
+        case '/project/professional':
+            code = professionalCode
+            language = Prism.languages.php
             break;
         case '/contact':
             code = contactCode
@@ -74,11 +81,16 @@ export default function CodePage() {
                 highlight={code => hightlightWithLineNumbers(code, language)}
                 padding={10}
                 className="editor"
+                preClassName="code-editor-pre"
+                textareaClassName="code-editor-textarea"
+                textareaId="codeArea"
                 readOnly={true}
                 style={{
                     fontFamily: '"Fira code", "Fira Mono", monospace',
                     fontSize: 14,
-                    outline: 0
+                    outline: 0,
+                    overflowX: 'auto',
+                    overflowY: 'hidden'
                 }}
             />
         </div>

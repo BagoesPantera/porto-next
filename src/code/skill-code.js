@@ -1,35 +1,19 @@
-const skillCode = `class SkillActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_skill)
+const skillCode = `data class Skill(val category: String, val tools: List<String>)
 
-        val skillContent = """
-            <h1>Tech Skills</h1>
-            <div class="flex flex-col gap-10">
-                <div class="border-s-4 border-gray-300 py-5">
-                    <div class="flex items-center">
-                        <img src="@drawable/js_icon" class="w-10 h-10" />
-                        <span class="font-bold">JavaScript</span>
-                    </div>
-                    <p>I'm proficient in both frontend and backend development
-                    using JavaScript. I have experience working with various
-                    frameworks, including Vue, React, ExpressJS, and AdonisJS.</p>
-                </div>
-                <div class="border-s-4 border-gray-300 py-5">
-                    <div class="flex items-center">
-                        <img src="@drawable/php_icon" class="w-10 h-10" />
-                        <span class="font-bold">PHP</span>
-                    </div>
-                    <p>While I possess strong experience in various programming
-                    languages, I gravitate towards PHP as my primary choice for
-                    projects. Laravel, a robust PHP framework, remains my go-to
-                    for both MVC and API-based development due to its
-                    efficiency and diverse functionalities.</p>
-                </div>
-            </div>
-        """.trimIndent()
+val primaryStack = "Laravel / PHP"
 
-        skillText.text = Html.fromHtml(skillContent, Html.FROM_HTML_MODE_COMPACT)
+val stack = listOf(
+    Skill("Backend Framework", listOf("Laravel", "PHP")),
+    Skill("Frontend", listOf("React.js", "Vue.js", "Livewire", "Filament", "Blade")),
+    Skill("Database & Backend", listOf("MySQL", "PostgreSQL", "Redis", "REST API")),
+    Skill("Deployment & Infrastructure", listOf("AWS", "VPS", "cPanel", "Git"))
+)
+
+fun printStack() {
+    println("Primary: " + primaryStack)
+    stack.forEach { skill ->
+        println(skill.category + ": " + skill.tools.joinToString(", "))
     }
-}`
+}
+`
 export default skillCode;

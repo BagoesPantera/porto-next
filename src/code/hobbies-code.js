@@ -1,45 +1,26 @@
-const hobbiesCode = `package com.pantera.portfolio;
+const hobbiesCode = `import java.util.List;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
-import static java.lang.System.out;
+public class HobbiesPanel {
+  enum Hobby {
+    CODING("HackerRank", "Codewars", "LeetCode"),
+    GAMING("League of Legends", "VALORANT", "Legends of Runeterra");
 
-public final class HobbiesPanel extends JPanel {
-    public HobbiesPanel() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+    private final List<String> favorites;
 
-        JLabel title = new JLabel("Hobbies");
-        add(title);
-
-        JPanel games = new JPanel();
-        games.add(new JLabel("Games"));
-        JTextArea gamesText = new JTextArea(
-            "In addition to coding, I enjoy gaming, particularly titles " +
-            "from Riot Games, like League of Legends, Valorant, and Legends " +
-            "of Runeterra. However, I haven't gotten into mobile games yet.");
-        games.add(gamesText);
-
-        add(games);
-
-        JPanel code = new JPanel();
-        code.add(new JLabel("Code"));
-        JTextArea codeText = new JTextArea(
-            "My passion for coding lies in the constant opportunity to " +
-            "explore new challenges. In my free time, I actively engage in " +
-            "online coding platforms like HackerRank, Codewars, and LeetCode " +
-            "to tackle diverse problems and hone my programming abilities.");
-        code.add(codeText);
-
-        add(code);
+    Hobby(String... favorite) {
+      this.favorites = List.of(favorite);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            out.println("rendering hobbies page");
-            new HobbiesPage().setVisible(true);
-        });
+    List<String> favorites() {
+      return favorites;
     }
-}`
+  }
+
+  public static void main(String[] args) {
+    for (Hobby hobby : Hobby.values()) {
+      System.out.println(hobby + " -> " + String.join(", ", hobby.favorites()));
+    }
+  }
+}
+`
 export default hobbiesCode;
