@@ -14,9 +14,6 @@ export default function TopNav() {
                     <TopNavItem icon={jsIcon} href='/'>index.js</TopNavItem>
                 </li>
                 <li>
-                    <TopNavItem icon={goIcon} href='/project'>project.go</TopNavItem>
-                </li>
-                <li>
                     <TopNavItem icon={pythonIcon} href='/contact'>contact.py</TopNavItem>
                 </li>
             </ul>
