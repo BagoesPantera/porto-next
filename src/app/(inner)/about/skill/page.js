@@ -50,9 +50,8 @@ export default function Skill() {
                     </div>
                 </div>
             </div>
-            <div className="h-fit mt-2 lg:mt-10 text-gray-600 py-5">
-                    
-                </div>
+            {/* just a spacing */}
+            <div className="h-fit mt-2 lg:mt-10 text-gray-600 py-5"></div>
         </>
     )
 }
