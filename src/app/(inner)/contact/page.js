@@ -18,7 +18,12 @@ export default function Contact() {
     });
 
     async function sendMessage(email, content) {
-        const resp = await fetch(`https://api.telegram.org/bot7130211581:AAFTP6o4NQ98hvoEx8MPRxJ4clLkiHSHMms/sendMessage?chat_id=5248458263&text=<${email}>${content}`)
+        const website = document.getElementById('website')?.value ?? ''
+        const resp = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, content, website })
+        })
         if (resp.ok) {
             Toast.fire({
                 icon: "success",
@@ -40,6 +45,7 @@ export default function Contact() {
                     <h1 className={'text-4xl text-gray-800'}>Contact me</h1>
                     <div className="border-s-4 border-gray-300 h-fit py-5 flex flex-col  w-[75%] ">
                         <form action="">
+                            <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                             <div className="ms-7 mt-4">
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
                                 <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="your.name@company.com" required value={inputEmail} onChange={(e) => { setInputEmail(e.currentTarget.value) }} />

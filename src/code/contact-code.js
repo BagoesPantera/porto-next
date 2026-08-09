@@ -1,11 +1,12 @@
 const contactCode = `from flask import Flask, render_template, request
 
 import requests
+import os
 
 app = Flask(__name__)
 
-TELEGRAM_API = "https://api.telegram.org/bot7130211581:AAFTP6o4NQ98hvoEx8MPRxJ4cLklHSHMms"
-CHAT_ID = "5248458263"
+TELEGRAM_API = os.getenv("TELEGRAM_API")  # e.g. https://api.telegram.org/bot<YOUR_BOT_TOKEN>
+CHAT_ID = os.getenv("CHAT_ID", "YOUR_CHAT_ID")
 
 
 @app.route("/contact", methods=["GET", "POST"])
