@@ -7,6 +7,8 @@ import goIcon from '@public/go.svg'
 import rubbyIcon from '@public/ruby.svg'
 import kotlinIcon from '@public/kotlin.svg'
 import javaIcon from '@public/java.svg'
+import reactIcon from '@public/react.svg'
+import vueIcon from '@public/vue.svg'
 import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
 import { useState } from "react"
 
@@ -91,17 +93,14 @@ export default function Sidebar() {
                                         </>
                                     )
                                 }
-                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
+                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Project</span>
                             </button>
-                            <ul className={`${!toggleAbout ? 'hidden' : ''} py-2 space-y-2`}>
+                            <ul className={`${!toggleProject ? 'hidden' : ''} py-2 space-y-2`}>
                                 <li>
-                                    <NavItem icon={rubbyIcon} href='/about'>index.rb</NavItem>
+                                    <NavItem icon={reactIcon} href='/project/personal-project'>personal-project.jsx</NavItem>
                                 </li>
                                 <li>
-                                    <NavItem icon={kotlinIcon} href='/about/skill'>skills.kt</NavItem>
-                                </li>
-                                <li>
-                                    <NavItem icon={javaIcon} href='/about/hobbies'>hobbies.java</NavItem>
+                                    <NavItem icon={vueIcon} href='/project/professional-project'>professional-project.vue</NavItem>
                                 </li>
                             </ul>
                         </li>
