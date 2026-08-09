@@ -12,6 +12,7 @@ import { useState } from "react"
 
 export default function Sidebar() {
     const [toggleAbout, setToogleAbout] = useState(true) // false = closed
+    const [toggleProject, setToogleProject] = useState(true) // false = closed
 
     return (
         <>
@@ -44,6 +45,39 @@ export default function Sidebar() {
                             >
 
                                 {toggleAbout ?
+                                    (
+                                        <>
+                                            <VscChevronDown className={'w-5 h-5'} />
+                                            <VscFolderOpened />
+                                        </>
+                                    )
+                                    : (
+                                        <>
+                                            <VscChevronRight className={'w-5 h-5'} />
+                                            <VscFolder />
+                                        </>
+                                    )
+                                }
+                                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">About</span>
+                            </button>
+                            <ul className={`${!toggleAbout ? 'hidden' : ''} py-2 space-y-2`}>
+                                <li>
+                                    <NavItem icon={rubbyIcon} href='/about'>index.rb</NavItem>
+                                </li>
+                                <li>
+                                    <NavItem icon={kotlinIcon} href='/about/skill'>skills.kt</NavItem>
+                                </li>
+                                <li>
+                                    <NavItem icon={javaIcon} href='/about/hobbies'>hobbies.java</NavItem>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className={'pl-5'}>
+                            <button type="button"
+                                className={`flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100`} onClick={() => { setToogleProject(!toggleProject) }}
+                            >
+
+                                {toggleProject ?
                                     (
                                         <>
                                             <VscChevronDown className={'w-5 h-5'} />
