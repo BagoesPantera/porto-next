@@ -3,12 +3,12 @@
 import NavItem from "./nav-item"
 import jsIcon from '@public/js.svg'
 import pythonIcon from '@public/python.svg'
-import goIcon from '@public/go.svg'
 import rubbyIcon from '@public/ruby.svg'
 import kotlinIcon from '@public/kotlin.svg'
 import javaIcon from '@public/java.svg'
 import reactIcon from '@public/react.svg'
-import vueIcon from '@public/vue.svg'
+import phpIcon from '@public/php.svg'
+
 import { VscChevronDown, VscChevronRight, VscFolder, VscFolderOpened } from "react-icons/vsc";
 import { useState } from "react"
 
@@ -97,15 +97,12 @@ export default function Sidebar() {
                             </button>
                             <ul className={`${!toggleProject ? 'hidden' : ''} py-2 space-y-2`}>
                                 <li>
-                                    <NavItem icon={reactIcon} href='/project/personal-project'>personal-project.jsx</NavItem>
+                                    <NavItem icon={reactIcon} href='/project/personal'>personal.jsx</NavItem>
                                 </li>
                                 <li>
-                                    <NavItem icon={vueIcon} href='/project/professional-project'>professional-project.vue</NavItem>
+                                    <NavItem icon={phpIcon} href='/project/professional'>professional.php</NavItem>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <NavItem icon={goIcon} href='/project'>project.go</NavItem>
                         </li>
                         <li>
                             <NavItem icon={pythonIcon} href='/contact'>contact.py</NavItem>

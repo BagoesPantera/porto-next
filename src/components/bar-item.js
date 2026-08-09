@@ -4,10 +4,11 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import jsIcon from '@public/js.svg'
 import pythonIcon from '@public/python.svg'
-import goIcon from '@public/go.svg'
 import rubbyIcon from '@public/ruby.svg'
 import kotlinIcon from '@public/kotlin.svg'
 import javaIcon from '@public/java.svg'
+import phpIcon from '@public/php.svg'
+import reactIcon from '@public/react.svg'
 
 export default function BarItem() {
   const pathName = usePathname()
@@ -19,9 +20,13 @@ export default function BarItem() {
       icon = jsIcon
       text = 'index.js'
       break;
-    case '/project':
-      icon = goIcon
-      text = 'project.go'
+    case '/project/professional':
+      icon = phpIcon
+      text = 'professional.php'
+      break;
+    case '/project/personal':
+      icon = reactIcon
+      text = 'personal.jsx'
       break;
     case '/contact':
       icon = pythonIcon
