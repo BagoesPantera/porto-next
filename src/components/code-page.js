@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs";
+import Prism from "prismjs";
 import 'prismjs/themes/prism.css'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-go'
@@ -19,11 +19,18 @@ import hobbiesCode from '@/code/hobbies-code';
 import contactCode from '@/code/contact-code';
 
 export default function CodePage() {
-    const hightlightWithLineNumbers = (input, language) =>
-        highlight(input, language)
+    const hightlightWithLineNumbers = (input, language) => {
+        let highlighted;
+        try {
+            highlighted = Prism.highlight(input, language);
+        } catch {
+            highlighted = input;
+        }
+        return highlighted
             .split("\n")
             .map((line, i) => `<span class='editorLineNumber' key='${i}'>${i + 1}</span>${line}`)
             .join("\n");
+    }
 
     const pathName = usePathname()
 
@@ -33,27 +40,28 @@ export default function CodePage() {
     switch (pathName) {
         case '/':
             code = homeCode
-            language = languages.jsx
+            language = Prism.languages.jsx
             break;
         case '/project':
             code = projectCode
-            language = languages.go
+            language = Prism.languages.go
             break;
         case '/contact':
             code = contactCode
-            language = languages.python
+            language = Prism.languages.python
             break;
         case '/about':
             code = aboutCode
-            language = languages.ruby
+            language = Prism.languages.ruby
             break;
         case '/about/skill':
             code = skillCode
-            language = languages.kotlin
+            language = Prism.languages.kotlin
             break;
         case '/about/hobbies':
             code = hobbiesCode
-            language = languages.java
+            language = Prism.languages.java
+            break;
 
         default:
             break;

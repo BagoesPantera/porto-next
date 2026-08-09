@@ -1,64 +1,45 @@
-const hobbiesCode = `package com.mindprod.example;
+const hobbiesCode = `package com.pantera.portfolio;
 
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-import java.awt.Color;
-import java.awt.Container;
-import java.io.IOException;
+import static java.lang.System.out;
 
-import static java.lang.System.*;
+public final class HobbiesPanel extends JPanel {
+    public HobbiesPanel() {
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-/**
- *
- * @author Pantera
- */
-@SuppressWarnings( { "UnusedDeclaration" } )
-final class HTMLRendering
-    {
-    @SuppressWarnings( { "UnusedParameters" } )
-    public static void main( String args[] )
-        {
-        SwingUtilities.invokeLater( new Runnable()
-            {
-            /**
-             * } fire up a JFrame on the Swing thread
-             */
-            public void run()
-                {
-                out.println( "Starting" );
-                final JFrame jframe =
-                        new JFrame( TITLE_STRING + " " + VERSION_STRING );
-                Container contentPane = jframe.getContentPane();
-                jframe.setSize( width, height );
-                contentPane.setBackground( Color.YELLOW );
-                contentPane.setForeground( Color.BLUE );
-                jframe.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-                try
-                    {
-                    out.println( "acquiring URL" );
-                    JEditorPane jep = new JEditorPane( URL );
-                    out.println( "URL acquired" );
-                    JScrollPane jsp =
-                            new JScrollPane( jep,
-                                    JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                                    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED );
-                    contentPane.add( jsp );
-                    }
-                catch ( IOException e )
-                    {
-                    err.println( "can't find URL" );
-                    contentPane.add( new JLabel( "can't find URL" ) );
-                    }
-                jframe.validate();
-                jframe.setVisible( true );
-                // Shows page, with HTML comments erroneously displayed.
-                // The links are not clickable.
-                }
-            } );
-        } // end main
-    } // end TestHTMLRendering`
+        JLabel title = new JLabel("Hobbies");
+        add(title);
 
-    export default hobbiesCode
+        JPanel games = new JPanel();
+        games.add(new JLabel("Games"));
+        JTextArea gamesText = new JTextArea(
+            "In addition to coding, I enjoy gaming, particularly titles " +
+            "from Riot Games, like League of Legends, Valorant, and Legends " +
+            "of Runeterra. However, I haven't gotten into mobile games yet.");
+        games.add(gamesText);
+
+        add(games);
+
+        JPanel code = new JPanel();
+        code.add(new JLabel("Code"));
+        JTextArea codeText = new JTextArea(
+            "My passion for coding lies in the constant opportunity to " +
+            "explore new challenges. In my free time, I actively engage in " +
+            "online coding platforms like HackerRank, Codewars, and LeetCode " +
+            "to tackle diverse problems and hone my programming abilities.");
+        code.add(codeText);
+
+        add(code);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            out.println("rendering hobbies page");
+            new HobbiesPage().setVisible(true);
+        });
+    }
+}`
+export default hobbiesCode;
